@@ -1,0 +1,23 @@
+#include "resource.h"
+
+IDR_MENUBAR MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Browse",ID_BUTTON_PAL_BROWSE
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",ID_FILE_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "About",ID_HELP_ABOUT
+    END
+END
+
+IDD_REVIEW DIALOG 0, 0, 174, 160
+CAPTION "Palette Review"
+STYLE 0x800 | 0x80 | 0x80880000 | 0xC00000
+FONT 9, "MS Shell Dlg"
+BEGIN
+    LTEXT "", 22011, 0, 0, 174, 160, 0x800000
+END
