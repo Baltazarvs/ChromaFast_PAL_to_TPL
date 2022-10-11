@@ -109,8 +109,7 @@ LRESULT __stdcall WndProc(HWND w_Handle, UINT Msg, WPARAM wParam, LPARAM lParam)
                                     ConvertedSNESColors_Split.push_back(0x00);
                                 else
                                     ConvertedSNESColors_Split.push_back(bgr555_color_split.first);
-                                
-                                ReviewColorsVector.push_back(color_rgb888);
+                                ReviewColorsVector.push_back(RGB(R, G, B));
                             }
                         }   
                         file.close();
@@ -358,13 +357,17 @@ LRESULT __stdcall DlgProc_PaletteReview(HWND w_Dlg, UINT Msg, WPARAM wParam, LPA
     switch(Msg)
     {
         case WM_INITDIALOG:
+        {
+            RECT wRect;
+            GetWindowRect(GetParent(w_Dlg), &wRect);
+            SetWindowPos(w_Dlg, nullptr, wRect.left + 50, wRect.top + 50, 0, 0, SWP_NOSIZE);
             SetWindowSubclass(w_DlgStaticReview, (SUBCLASSPROC)SubClassProc_Review, 0u, 0u);
             break;
+        }
         case WM_CLOSE:
         {
             RemoveWindowSubclass(w_DlgStaticReview, (SUBCLASSPROC)SubClassProc_Review, 0u);
-            for(std::size_t i = 0; i < ReviewColorsVector.size(); ++i)
-                ReviewColorsVector.pop_back();
+            ReviewColorsVector.clear();
             EndDialog(w_Dlg, 0);
             break;
         }
@@ -401,6 +404,7 @@ LRESULT __stdcall SubClassProc_Review(HWND w_Ctl, UINT Msg, WPARAM wParam, LPARA
                     row += 1;
                     col = 0;
                 }
+
                 rct.left = 16 * col;
                 rct.right = 16 * col + 16;
                 rct.bottom = 16 * (row - 1) + 16;
@@ -411,10 +415,9 @@ LRESULT __stdcall SubClassProc_Review(HWND w_Ctl, UINT Msg, WPARAM wParam, LPARA
                 DeleteObject(hbr);
                 col += 1;
             }
-
             EndPaint(w_Ctl, &ps);
             break;
-        }//C:\Users\Ilija\Desktop\testaa.pal
+        }
         default:
             return DefSubclassProc(w_Ctl, Msg, wParam, lParam);
     }
