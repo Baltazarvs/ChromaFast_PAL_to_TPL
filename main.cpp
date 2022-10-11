@@ -1,4 +1,12 @@
-// Created 2022 by Nitrocell
+/*
+ * ----------------------------------------------------------------------
+ * Created 2022 by Nitrocell (Baltazarus)
+ *
+ * ChromaFast PAL-TPL Converter is fast palette converter that converts
+ * PAL's rgb888 format to BGR555 TPL's format (used for SNES). and its
+ * 'T','P','L',0x02 header.
+ * ----------------------------------------------------------------------
+*/
 
 #include "util.h"
 #include "resource.h"
@@ -170,7 +178,7 @@ LRESULT __stdcall WndProc(HWND w_Handle, UINT Msg, WPARAM wParam, LPARAM lParam)
                     MessageBoxA(
                         w_Handle,
                         "ChromaFast Palette Converter"
-                        "\nCreated 2022 by Nitrocell"
+                        "\nCreated 2022 by Nitrocell (Baltazarus)"
                         "\n\nUse this tool to convert PAL to TPL format.",
                         "About",
                         MB_OK | MB_ICONINFORMATION

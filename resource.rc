@@ -1,3 +1,5 @@
+// Created 2022 by Nitrocell (Baltazarus)
+
 #include "resource.h"
 
 IDR_MENUBAR MENU
@@ -20,4 +22,28 @@ STYLE 0x800 | 0x80 | 0x80880000 | 0xC00000
 FONT 9, "MS Shell Dlg"
 BEGIN
     LTEXT "", 22011, 0, 0, 174, 160
+END
+
+1 VERSIONINFO
+FILEVERSION     0, 0, 0, 0
+PRODUCTVERSION  0, 0, 0, 0
+FILEOS          0x40004
+FILETYPE        0x1
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Baltazarus\0"
+            VALUE "FileDescription", "ChromaFast PAL-TPL Converter\0"
+            VALUE "FileVersion", "1.0\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 Nitrocell. Do whatever you want.\0"
+            VALUE "ProductName", "ChromaFast PAL-TPL Converter\0"
+            VALUE "ProductVersion", "1.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04E4
+    END
 END

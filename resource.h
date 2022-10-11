@@ -1,3 +1,5 @@
+// Created 2022 by Nitrocell (Baltazarus)
+
 #define ID_BUTTON_PAL_BROWSE    21001
 #define ID_BUTTON_CONVERT       21002
 
