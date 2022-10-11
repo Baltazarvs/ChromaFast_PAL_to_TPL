@@ -254,7 +254,7 @@ int __stdcall WinMain(HINSTANCE w_Inst, HINSTANCE w_PrevInst, char* lpCmdLine, i
     w_Handle = CreateWindowExA(
         WS_EX_CLIENTEDGE,
         LP_CLASS_NAME,
-        "ChromaFast Palette Converter",
+        "ChromaFast PAL-TPL Converter",
         WS_OVERLAPPEDWINDOW,
         100, 100, 300, 128,
         nullptr, nullptr, GetModuleHandleA(nullptr), nullptr
